@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="TProducto">
+		<title>Productos</title>
+		<centered>1</centered>
+		<size>750,311</size>
+		<minsize>750,-1</minsize>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<style>wxCAPTION|wxSYSTEM_MENU|wxRESIZE_BORDER|wxCLOSE_BOX|wxMAXIMIZE_BOX</style>
+		<object class="wxFlexGridSizer" variable="FGS1" member="no">
+			<cols>1</cols>
+			<rows>3</rows>
+			<growablecols>0</growablecols>
+			<growablerows>0</growablerows>
+			<object class="sizeritem">
+				<object class="wxGrid" name="ID_GRID1" variable="GridProductos" member="yes">
+					<cols>6</cols>
+					<rows>5</rows>
+					<defaultcolsize>100</defaultcolsize>
+					<collabels>
+						<item>ID_Producto</item>
+						<item>Desc</item>
+						<item>Descripcion</item>
+						<item>Precio USD</item>
+						<item>Precio ARG</item>
+						<item>Comision</item>
+					</collabels>
+					<style>wxDOUBLE_BORDER|wxTRANSPARENT_WINDOW</style>
+					<handler function="OnGridProductosResize" entry="EVT_SIZE" />
+				</object>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>5</border>
+				<minsize>-1,-1</minsize>
+				<option>1</option>
+			</object>
+			<object class="sizeritem">
+				<object class="wxStaticBoxSizer" variable="LayerMedio" member="no">
+					<label>Configuracion Actual:</label>
+					<object class="sizeritem">
+						<object class="wxStaticText" name="ID_STATICTEXT1" variable="TextDolar" member="yes">
+							<label>Precio Dolar:</label>
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextBoxDolar" member="yes">
+							<enabled>0</enabled>
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+				</object>
+				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL</flag>
+				<border>5</border>
+				<option>1</option>
+			</object>
+			<object class="sizeritem">
+				<object class="wxBoxSizer" variable="BoxSizer1" member="no">
+					<object class="sizeritem">
+						<object class="wxBitmapButton" name="ID_BITMAPBUTTON1" variable="BitmapButton1" member="yes">
+							<bitmap>C:\Proyects\javistore\img\ico-product-add.png</bitmap>
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+				</object>
+				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+				<border>5</border>
+				<option>1</option>
+			</object>
+		</object>
+	</object>
+</wxsmith>

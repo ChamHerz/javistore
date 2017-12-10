@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="javistoreFrame">
+		<title>Sin título: Bloc de notas</title>
+		<centered>1</centered>
+		<icon stock_id="wxART_CDROM" stock_client="wxART_FRAME_ICON" />
+		<pos>-1,-1</pos>
+		<size>773,484</size>
+		<id_arg>0</id_arg>
+		<style>wxCAPTION|wxSYSTEM_MENU|wxCLOSE_BOX|wxMINIMIZE_BOX</style>
+		<object class="wxMenuBar" variable="MenuBar1" member="no">
+			<object class="wxMenu" variable="Menu1" member="no">
+				<label>&amp;JaviStore</label>
+				<object class="wxMenuItem" name="ID_MENUITEM1" variable="MenuItem3" member="yes">
+					<label>Abrir Dialogo</label>
+					<accel>Alt-F2</accel>
+					<help>Abre un Dialogo</help>
+				</object>
+				<object class="wxMenuItem" name="idMenuQuit" variable="MenuItem1" member="no">
+					<label>Salir</label>
+					<accel>Alt-F4</accel>
+					<help>Salir de la Aplicacion</help>
+					<handler function="OnQuit" entry="EVT_MENU" />
+				</object>
+			</object>
+			<object class="wxMenu" variable="Menu2" member="no">
+				<label>&amp;Ayuda</label>
+				<object class="wxMenuItem" name="idMenuAbout" variable="MenuItem2" member="no">
+					<label>A&amp;cerca De...</label>
+					<accel>F1</accel>
+					<help>Show info about this application</help>
+					<handler function="OnAbout" entry="EVT_MENU" />
+				</object>
+			</object>
+		</object>
+		<object class="wxStatusBar" name="ID_STATUSBAR1" variable="StatusBar1" member="yes">
+			<fields>1</fields>
+			<widths>-1</widths>
+			<styles>wxSB_NORMAL</styles>
+		</object>
+		<object class="wxToolBar" name="ID_TOOLBAR1" variable="ToolBar1" member="yes" />
+	</object>
+</wxsmith>

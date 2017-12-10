@@ -1,0 +1,1 @@
+CREATE TABLE cliente (ID_Cliente INT, Apellido TEXT, Nombre TEXT, Telefono TEXT, Email TEXT);

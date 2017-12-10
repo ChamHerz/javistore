@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="TPedido">
+		<title>Pedidos</title>
+		<centered>1</centered>
+		<size>1300,600</size>
+		<minsize>800,600</minsize>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<style>wxCAPTION|wxSYSTEM_MENU|wxRESIZE_BORDER|wxCLOSE_BOX|wxMAXIMIZE_BOX</style>
+		<object class="wxFlexGridSizer" variable="LayerGlobal" member="no">
+			<cols>1</cols>
+			<rows>3</rows>
+			<growablecols>0</growablecols>
+			<growablerows>0</growablerows>
+			<object class="sizeritem">
+				<object class="wxGrid" name="ID_GRID1" variable="GridPedidos" member="yes">
+					<cols>11</cols>
+					<collabels>
+						<item>ID</item>
+						<item>Apellido</item>
+						<item>Nombre</item>
+						<item>Descripcion</item>
+						<item>PrecioUSD</item>
+						<item>PrecioARG</item>
+						<item>Comision</item>
+						<item>Fe Pedido</item>
+						<item>Fe Compra</item>
+						<item>Fe Entregado</item>
+						<item>Entregado</item>
+					</collabels>
+					<handler function="OnGridPedidosLabelLeftDClick" entry="EVT_CMD_GRID_LABEL_LEFT_DCLICK" />
+				</object>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>5</border>
+				<option>1</option>
+			</object>
+			<object class="sizeritem">
+				<object class="wxBoxSizer" variable="LayerBottom" member="no">
+					<object class="sizeritem">
+						<object class="wxBitmapButton" name="ID_BITMAPBUTTON1" variable="BotonAgregarPedido" member="yes">
+							<bitmap>C:\Proyects\javistore\bin\Release\img\ico-pedidos-add-boton.png</bitmap>
+							<handler function="OnBotonAgregarPedidoClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBitmapButton" name="ID_BITMAPBUTTON2" variable="BotonModificarPedido" member="yes">
+							<bitmap>C:\Proyects\javistore\img\ico-pedido-edit-button.png</bitmap>
+							<handler function="OnBotonModificarPedidoClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+				</object>
+				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+				<border>5</border>
+				<option>1</option>
+			</object>
+		</object>
+	</object>
+</wxsmith>
