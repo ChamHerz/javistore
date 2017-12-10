@@ -11,7 +11,9 @@
 //(*IdInit(TPedido)
 const long TPedido::ID_GRID1 = wxNewId();
 const long TPedido::ID_BITMAPBUTTON1 = wxNewId();
+const long TPedido::ID_BITMAPBUTTON3 = wxNewId();
 const long TPedido::ID_BITMAPBUTTON2 = wxNewId();
+const long TPedido::ID_MESSAGEDIALOG1 = wxNewId();
 //*)
 
 const int TPedido::ID_CARGAR_ADD = 100;
@@ -56,16 +58,20 @@ TPedido::TPedido(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize&
 	LayerBottom = new wxBoxSizer(wxHORIZONTAL);
 	BotonAgregarPedido = new wxBitmapButton(this, ID_BITMAPBUTTON1, wxBitmap(wxImage(_T("C:\\Proyects\\javistore\\bin\\Release\\img\\ico-pedidos-add-boton.png"))), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW, wxDefaultValidator, _T("ID_BITMAPBUTTON1"));
 	LayerBottom->Add(BotonAgregarPedido, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+	BotonEliminar = new wxBitmapButton(this, ID_BITMAPBUTTON3, wxBitmap(wxImage(_T("C:\\proyects\\javistore\\img\\ico-pedidos-delete.png"))), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW, wxDefaultValidator, _T("ID_BITMAPBUTTON3"));
+	LayerBottom->Add(BotonEliminar, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	BotonModificarPedido = new wxBitmapButton(this, ID_BITMAPBUTTON2, wxBitmap(wxImage(_T("C:\\Proyects\\javistore\\img\\ico-pedido-edit-button.png"))), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW, wxDefaultValidator, _T("ID_BITMAPBUTTON2"));
 	LayerBottom->Add(BotonModificarPedido, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	LayerGlobal->Add(LayerBottom, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	SetSizer(LayerGlobal);
+	DialogoBorrado = new wxMessageDialog(this, wxEmptyString, _("Message"), wxYES_NO|wxICON_ERROR, wxDefaultPosition);
 	SetSizer(LayerGlobal);
 	Layout();
 	Center();
 
 	Connect(ID_GRID1,wxEVT_GRID_LABEL_LEFT_DCLICK,(wxObjectEventFunction)&TPedido::OnGridPedidosLabelLeftDClick);
 	Connect(ID_BITMAPBUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&TPedido::OnBotonAgregarPedidoClick);
+	Connect(ID_BITMAPBUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&TPedido::OnBotonEliminarClick);
 	Connect(ID_BITMAPBUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&TPedido::OnBotonModificarPedidoClick);
 	//*)
 
@@ -188,4 +194,30 @@ void TPedido::OnBotonModificarPedidoClick(wxCommandEvent& event)
 void TPedido::OnGridPedidosLabelLeftDClick(wxGridEvent& event)
 {
     TPedido::OnBotonModificarPedidoClick(event);
+}
+
+void TPedido::OnBotonEliminarClick(wxCommandEvent& event)
+{
+    wxArrayInt rowsSelected = GridPedidos->GetSelectedRows();
+    if (rowsSelected.Count() == 0){
+        wxMessageBox("No seleccion nada para borrar");
+        return;
+    }
+
+    int fila = rowsSelected[0];
+    wxString idPedido = GridPedidos->GetCellValue(fila,0);
+    wxString apellido = GridPedidos->GetCellValue(fila,1);
+    DialogoBorrado->SetMessage(wxString::Format(_("Esta seguro de borrar %s, con Id %s"),apellido,idPedido));
+
+    if (DialogoBorrado->ShowModal() == wxID_YES){
+        wxString testDBName = wxGetCwd() + wxT("/database.db");
+        db->Open(testDBName);
+        wxString SQLQuery = wxString::Format(_("DELETE FROM pedido WHERE ID_Pedido = %s;"),idPedido);
+        wxSQLite3ResultSet Res = db->ExecuteQuery(SQLQuery);
+
+        Res.Finalize();
+        db->Close();
+
+        PepidoSelectAll(ID_CARGAR_ADD);
+    }
 }

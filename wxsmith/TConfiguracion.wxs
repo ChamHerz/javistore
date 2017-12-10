@@ -71,5 +71,10 @@
 			<message></message>
 			<style>wxYES_NO|wxICON_ERROR</style>
 		</object>
+		<object class="wxMessageDialog" name="ID_MESSAGEDIALOG2" variable="DialogoError" member="yes">
+			<caption>Message</caption>
+			<message></message>
+			<style>wxOK|wxICON_ERROR</style>
+		</object>
 	</object>
 </wxsmith>

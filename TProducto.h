@@ -5,6 +5,7 @@
 #include <wx/sizer.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
+#include <wx/msgdlg.h>
 #include <wx/grid.h>
 #include <wx/bmpbuttn.h>
 #include <wx/dialog.h>
@@ -21,10 +22,14 @@ class TProducto: public wxDialog
 		void setValorDolar(float unValorDolar);
 
 		//(*Declarations(TProducto)
+		wxMessageDialog* DialogoError;
 		wxStaticText* TextDolar;
 		wxTextCtrl* TextBoxDolar;
-		wxBitmapButton* BitmapButton1;
+		wxBitmapButton* BotonAgregar;
 		wxGrid* GridProductos;
+		wxBitmapButton* BotonEliminar;
+		wxMessageDialog* DialogoBorrado;
+		wxBitmapButton* BotonEditar;
 		//*)
 
 	protected:
@@ -34,6 +39,10 @@ class TProducto: public wxDialog
 		static const long ID_STATICTEXT1;
 		static const long ID_TEXTCTRL2;
 		static const long ID_BITMAPBUTTON1;
+		static const long ID_BITMAPBUTTON3;
+		static const long ID_BITMAPBUTTON2;
+		static const long ID_MESSAGEDIALOG1;
+		static const long ID_MESSAGEDIALOG2;
 		//*)
 
 	private:
@@ -42,10 +51,17 @@ class TProducto: public wxDialog
 		void OnResize(wxSizeEvent& event);
 		void OnResize2(wxSizeEvent& event);
 		void OnGridProductosResize(wxSizeEvent& event);
+		void OnBotonAgregarClick(wxCommandEvent& event);
+		void OnBotonEditarClick(wxCommandEvent& event);
+		void OnGridProductosLabelLeftDClick(wxGridEvent& event);
+		void OnBotonEliminarClick(wxCommandEvent& event);
 		//*)
 
         float valorDolar;
-		void ClienteSelectAll();
+		void ProductoSelectAll(int ACCION);
+
+        static const int ID_CARGAR_ADD;
+		static const int ID_CARGAR_EDIT;
 
 		wxSQLite3Database* db;
 

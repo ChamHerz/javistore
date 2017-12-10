@@ -3,8 +3,6 @@
 	<object class="wxDialog" name="TPedidoAdd">
 		<title>Agregar Pedido</title>
 		<centered>1</centered>
-		<size>900,750</size>
-		<minsize>800,750</minsize>
 		<id_arg>0</id_arg>
 		<style>wxCAPTION|wxSYSTEM_MENU|wxRESIZE_BORDER|wxCLOSE_BOX|wxMAXIMIZE_BOX</style>
 		<handler function="OnClose" entry="EVT_CLOSE" />

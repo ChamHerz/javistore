@@ -79,6 +79,8 @@
 		<Unit filename="TPedidoAdd.h" />
 		<Unit filename="TProducto.cpp" />
 		<Unit filename="TProducto.h" />
+		<Unit filename="TProductoAdd.cpp" />
+		<Unit filename="TProductoAdd.h" />
 		<Unit filename="TSetting.cpp" />
 		<Unit filename="TSetting.h" />
 		<Unit filename="TUtil.cpp" />
@@ -95,6 +97,7 @@
 		<Unit filename="wxsmith/TPedido.wxs" />
 		<Unit filename="wxsmith/TPedidoAdd.wxs" />
 		<Unit filename="wxsmith/TProducto1.wxs" />
+		<Unit filename="wxsmith/TProductoAdd.wxs" />
 		<Unit filename="wxsmith/TSetting.wxs" />
 		<Unit filename="wxsmith/javistoreframe.wxs" />
 		<Unit filename="wxsqlite3.cpp" />
@@ -113,6 +116,7 @@
 					<wxDialog wxs="wxsmith/TClienteAdd.wxs" src="TClienteAdd.cpp" hdr="TClienteAdd.h" fwddecl="0" i18n="1" name="TClienteAdd" language="CPP" />
 					<wxDialog wxs="wxsmith/TPedido.wxs" src="TPedido.cpp" hdr="TPedido.h" fwddecl="0" i18n="1" name="TPedido" language="CPP" />
 					<wxDialog wxs="wxsmith/TPedidoAdd.wxs" src="TPedidoAdd.cpp" hdr="TPedidoAdd.h" fwddecl="0" i18n="1" name="TPedidoAdd" language="CPP" />
+					<wxDialog wxs="wxsmith/TProductoAdd.wxs" src="TProductoAdd.cpp" hdr="TProductoAdd.h" fwddecl="0" i18n="1" name="TProductoAdd" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>

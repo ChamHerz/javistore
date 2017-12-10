@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1509802003 source:c:\proyects\javistore\javistoreapp.cpp
+1512924060 source:c:\proyects\javistore\javistoreapp.cpp
 	"javistoreApp.h"
 	"javistoreMain.h"
 	<wx/image.h>
 
-1509802003 c:\proyects\javistore\javistoreapp.h
+1512924060 c:\proyects\javistore\javistoreapp.h
 	<wx/app.h>
 
 1456709618 c:\wxwidgets-3.1.0\include\wx\app.h
@@ -1499,7 +1499,7 @@
 1456709618 c:\wxwidgets-3.1.0\include\wx\univ\theme.h
 	"wx/string.h"
 
-1510022103 c:\proyects\javistore\javistoremain.h
+1512924060 c:\proyects\javistore\javistoremain.h
 	<wx/menu.h>
 	<wx/toolbar.h>
 	<wx/frame.h>
@@ -1585,7 +1585,7 @@
 	<QtWidgets/QMenu>
 	<QtWidgets/QMenuBar>
 
-1510022264 source:c:\proyects\javistore\javistoremain.cpp
+1512924060 source:c:\proyects\javistore\javistoremain.cpp
 	"javistoreMain.h"
 	<wx/msgdlg.h>
 	<wx/aboutdlg.h>
@@ -1691,7 +1691,7 @@
 	"wx/msgdlg.h"
 	<QtWidgets/QMessageBox>
 
-1509851395 source:c:\proyects\javistore\resource.rc
+1512924060 source:c:\proyects\javistore\resource.rc
 	"wx/msw/wx.rc"
 
 1456709618 c:\wxwidgets-3.1.0\include\wx\msw\wx.rc
@@ -1700,7 +1700,7 @@
 
 1456709618 c:\wxwidgets-3.1.0\include\wx\msw\rcdefs.h
 
-1510279044 source:c:\proyects\javistore\tconfiguracion.cpp
+1512940393 source:c:\proyects\javistore\tconfiguracion.cpp
 	"TConfiguracion.h"
 	"TClienteAdd.h"
 	<wx/msgdlg.h>
@@ -1709,7 +1709,7 @@
 	<wx/image.h>
 	<wx/string.h>
 
-1510279057 c:\proyects\javistore\tconfiguracion.h
+1512940304 c:\proyects\javistore\tconfiguracion.h
 	<wx/sizer.h>
 	<wx/msgdlg.h>
 	<wx/grid.h>
@@ -2192,7 +2192,7 @@
 	"wx/icon.h"
 	"wx/iconbndl.h"
 
-1460254064 source:c:\proyects\javistore\wxsqlite3.cpp
+1512924060 source:c:\proyects\javistore\wxsqlite3.cpp
 	"wx/wxprec.h"
 	"wx/wx.h"
 	"wx/regex.h"
@@ -2966,22 +2966,26 @@
 
 1460251758 c:\wxsqlite3-3.3.1\include\wx\wxsqlite3dyn.h
 
-1510366322 source:c:\proyects\javistore\tproducto.cpp
+1512939052 source:c:\proyects\javistore\tproducto.cpp
 	"TProducto.h"
 	<wx/msgdlg.h>
+	"TProductoAdd.h"
+	<wx/bitmap.h>
 	<wx/intl.h>
+	<wx/image.h>
 	<wx/string.h>
 
-1509910020 c:\proyects\javistore\tproducto.h
+1512940670 c:\proyects\javistore\tproducto.h
 	<wx/sizer.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
+	<wx/msgdlg.h>
 	<wx/grid.h>
-	<wx/button.h>
+	<wx/bmpbuttn.h>
 	<wx/dialog.h>
 	"wx/wxsqlite3.h"
 
-1509900384 c:\proyects\javistore\tsetting.h
+1512924060 c:\proyects\javistore\tsetting.h
 	<wx/sizer.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
@@ -2989,7 +2993,7 @@
 	<wx/dialog.h>
 	"wx/wxsqlite3.h"
 
-1509910382 source:c:\proyects\javistore\tsetting.cpp
+1512924060 source:c:\proyects\javistore\tsetting.cpp
 	"TSetting.h"
 	<wx/msgdlg.h>
 	<wx/intl.h>
@@ -2997,15 +3001,15 @@
 
 1509891127 c:\proyects\javistore\tbasedatos.h
 
-1509891969 c:\proyects\javistore\tbasedato.h
+1512924059 c:\proyects\javistore\tbasedato.h
 	"wx/wxsqlite3.h"
 
-1509893518 source:c:\proyects\javistore\tbasedato.cpp
+1512924059 source:c:\proyects\javistore\tbasedato.cpp
 	"TBaseDato.h"
 	<wx/filefn.h>
 	<wx/intl.h>
 
-1512787951 c:\proyects\javistore\tclienteadd.h
+1512924059 c:\proyects\javistore\tclienteadd.h
 	<wx/sizer.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
@@ -3013,20 +3017,21 @@
 	<wx/dialog.h>
 	"wx/wxsqlite3.h"
 
-1512838126 source:c:\proyects\javistore\tclienteadd.cpp
+1512924059 source:c:\proyects\javistore\tclienteadd.cpp
 	"TClienteAdd.h"
 	<wx/intl.h>
 	<wx/string.h>
 
-1512788229 c:\proyects\javistore\tpedido.h
+1512937221 c:\proyects\javistore\tpedido.h
 	<wx/sizer.h>
+	<wx/msgdlg.h>
 	<wx/grid.h>
 	<wx/bmpbuttn.h>
 	<wx/dialog.h>
 	"wx/wxsqlite3.h"
 	"TUtil.h"
 
-1512837503 source:c:\proyects\javistore\tpedido.cpp
+1512938405 source:c:\proyects\javistore\tpedido.cpp
 	"TPedido.h"
 	"TPedidoAdd.h"
 	<wx/bitmap.h>
@@ -3034,21 +3039,21 @@
 	<wx/image.h>
 	<wx/string.h>
 
-1512832814 c:\proyects\javistore\tutil.h
+1512924060 c:\proyects\javistore\tutil.h
 	<string>
 	<wx/datetime.h>
 
-1512832814 source:c:\proyects\javistore\tutil.cpp
+1512924060 source:c:\proyects\javistore\tutil.cpp
 	"TUtil.h"
 	<time.h>
 	<string.h>
 
-1512838176 source:c:\proyects\javistore\tpedidoadd.cpp
+1512929675 source:c:\proyects\javistore\tpedidoadd.cpp
 	"TPedidoAdd.h"
 	<wx/intl.h>
 	<wx/string.h>
 
-1512833124 c:\proyects\javistore\tpedidoadd.h
+1512924060 c:\proyects\javistore\tpedidoadd.h
 	<wx/sizer.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
@@ -3270,5 +3275,18 @@
 	<wx/bitmap.h>
 	<wx/intl.h>
 	<wx/image.h>
+	<wx/string.h>
+
+1512935035 c:\proyects\javistore\tproductoadd.h
+	<wx/sizer.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	<wx/button.h>
+	<wx/dialog.h>
+	"wx/wxsqlite3.h"
+
+1512935594 source:c:\proyects\javistore\tproductoadd.cpp
+	"TProductoAdd.h"
+	<wx/intl.h>
 	<wx/string.h>
 

@@ -84,8 +84,6 @@ TPedidoAdd::TPedidoAdd(int idPedido,int accionForm,wxWindow* parent,wxWindowID i
 	wxStaticBoxSizer* LayerDatosProducto;
 
 	Create(parent, wxID_ANY, _("Agregar Pedido"), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxSYSTEM_MENU|wxRESIZE_BORDER|wxCLOSE_BOX|wxMAXIMIZE_BOX, _T("wxID_ANY"));
-	SetClientSize(wxSize(900,750));
-	SetMinSize(wxSize(800,750));
 	LayerGlobal = new wxFlexGridSizer(3, 1, 0, 0);
 	LayerPedido = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Pedido:"));
 	StaticText17 = new wxStaticText(this, ID_STATICTEXT17, _("ID Pedido:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT17"));
@@ -215,8 +213,8 @@ TPedidoAdd::TPedidoAdd(int idPedido,int accionForm,wxWindow* parent,wxWindowID i
 	LayerGlobal->Add(LayerSubBotones, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	SetSizer(LayerGlobal);
 	DialogoError = new wxMessageDialog(this, wxEmptyString, _("Message"), wxOK|wxICON_ERROR, wxDefaultPosition);
-	SetSizer(LayerGlobal);
-	Layout();
+	LayerGlobal->Fit(this);
+	LayerGlobal->SetSizeHints(this);
 	Center();
 
 	Connect(ID_CHOICE1,wxEVT_COMMAND_CHOICE_SELECTED,(wxObjectEventFunction)&TPedidoAdd::OnComboClienteSelect);

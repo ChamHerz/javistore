@@ -15,6 +15,7 @@ const long TConfiguracion::ID_BITMAPBUTTON1 = wxNewId();
 const long TConfiguracion::ID_BITMAPBUTTON2 = wxNewId();
 const long TConfiguracion::ID_BITMAPBUTTON3 = wxNewId();
 const long TConfiguracion::ID_MESSAGEDIALOG1 = wxNewId();
+const long TConfiguracion::ID_MESSAGEDIALOG2 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(TConfiguracion,wxDialog)
@@ -57,6 +58,7 @@ TConfiguracion::TConfiguracion(wxWindow* parent,wxWindowID id,const wxPoint& pos
 	FlexGridSizer1->Add(BoxSizer1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	SetSizer(FlexGridSizer1);
 	DialogoBorrado = new wxMessageDialog(this, wxEmptyString, _("Message"), wxYES_NO|wxICON_ERROR, wxDefaultPosition);
+	DialogoError = new wxMessageDialog(this, wxEmptyString, _("Message"), wxOK|wxICON_ERROR, wxDefaultPosition);
 	SetSizer(FlexGridSizer1);
 	Layout();
 	Center();
@@ -165,13 +167,31 @@ void TConfiguracion::OnBotonBorrarClienteClick(wxCommandEvent& event)
     wxString idCliente = Grid1->GetCellValue(fila,0);
     wxString apellido = Grid1->GetCellValue(fila,1);
     wxString nombre = Grid1->GetCellValue(fila,2);
-    DialogoBorrado->SetMessage(wxString::Format(_("Esta seguro de borrar %s, %s con Id %s"),apellido,nombre,idCliente) ) ;
+
+    wxString testDBName = wxGetCwd() + wxT("/database.db");
+    db->Open(testDBName);
+    wxString SQLQuery = wxString::Format(_("SELECT ID_Pedido FROM pedido WHERE ID_Cliente = %s LIMIT 1;"),idCliente);
+    wxSQLite3ResultSet ResCliente = db->ExecuteQuery(SQLQuery);
+
+    if (ResCliente.Eof() == false){
+        DialogoError->SetMessage(wxString::Format(_("No se puede borrar %s, %s con Id %s, tiene Pedidos"),apellido,nombre,idCliente));
+        DialogoError->ShowModal();
+        return;
+    }
+
+    ResCliente.Finalize();
+    db->Close();
+
+    DialogoBorrado->SetMessage(wxString::Format(_("Esta seguro de borrar %s, %s con Id %s"),apellido,nombre,idCliente));
 
     if (DialogoBorrado->ShowModal() == wxID_YES){
         wxString testDBName = wxGetCwd() + wxT("/database.db");
         db->Open(testDBName);
-        wxString SQLQuery = wxString::Format(_("DELETE FROM cliente WHERE ID_Cliente=%s;"),idCliente);
+        SQLQuery = wxString::Format(_("DELETE FROM cliente WHERE ID_Cliente=%s;"),idCliente);
         wxSQLite3ResultSet Res = db->ExecuteQuery(SQLQuery);
+
+        Res.Finalize();
+        db->Close();
 
         ClienteSelectAll();
     }

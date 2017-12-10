@@ -3,6 +3,7 @@
 
 //(*Headers(TPedido)
 #include <wx/sizer.h>
+#include <wx/msgdlg.h>
 #include <wx/grid.h>
 #include <wx/bmpbuttn.h>
 #include <wx/dialog.h>
@@ -22,6 +23,8 @@ class TPedido: public wxDialog
 		wxGrid* GridPedidos;
 		wxBitmapButton* BotonAgregarPedido;
 		wxBitmapButton* BotonModificarPedido;
+		wxBitmapButton* BotonEliminar;
+		wxMessageDialog* DialogoBorrado;
 		//*)
 
 	protected:
@@ -29,7 +32,9 @@ class TPedido: public wxDialog
 		//(*Identifiers(TPedido)
 		static const long ID_GRID1;
 		static const long ID_BITMAPBUTTON1;
+		static const long ID_BITMAPBUTTON3;
 		static const long ID_BITMAPBUTTON2;
+		static const long ID_MESSAGEDIALOG1;
 		//*)
 
 	private:
@@ -38,6 +43,7 @@ class TPedido: public wxDialog
 		void OnBotonAgregarPedidoClick(wxCommandEvent& event);
 		void OnBotonModificarPedidoClick(wxCommandEvent& event);
 		void OnGridPedidosLabelLeftDClick(wxGridEvent& event);
+		void OnBotonEliminarClick(wxCommandEvent& event);
 		//*)
 
 		static const int ID_CARGAR_ADD;

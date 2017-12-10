@@ -19,6 +19,7 @@ class TConfiguracion: public wxDialog
 		virtual ~TConfiguracion();
 
 		//(*Declarations(TConfiguracion)
+		wxMessageDialog* DialogoError;
 		wxBitmapButton* BotonBorrarCliente;
 		wxGrid* Grid1;
 		wxBitmapButton* BotonAgregarCliente;
@@ -34,6 +35,7 @@ class TConfiguracion: public wxDialog
 		static const long ID_BITMAPBUTTON2;
 		static const long ID_BITMAPBUTTON3;
 		static const long ID_MESSAGEDIALOG1;
+		static const long ID_MESSAGEDIALOG2;
 		//*)
 
 	private:
